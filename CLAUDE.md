@@ -112,12 +112,15 @@ changes.
 ## Distribution
 
 - **Mac App Store**: version 2.0.0 is the first App Store release; builds go up
-  from Xcode (Archive → Organizer → App Store Connect). The website's App
-  Store button (commented out in `docs/index.html`) points to app id
-  `6818242560` at $1.99. There is no App Store metadata folder in this repo.
+  with `xcodebuild -exportArchive` and an App Store Connect API key (the
+  Organizer's Apple ID upload fails). The website's App Store button
+  (commented out in `docs/index.html`) points to app id `6818242560` at
+  $1.99. Listing text and screenshots live in the gitignored `release/`;
+  there is no App Store metadata folder in this repo.
 - **GitHub releases** on this repo: `v1.1.0` and `v1.1.1` attached a zipped
-  `MDView.app`; `v1.2.0` was source only. No GitHub Actions, no Sparkle, no
-  DMG or notarization scripts.
+  `MDView.app`; `v1.2.0` was source only; `v2.0.0` attached a Developer ID
+  signed, notarized `Plainview-2.0.0.zip`, as every version will. No GitHub
+  Actions, no Sparkle, no DMG or notarization scripts.
 - Steps: `RELEASING.md`. History: `CHANGELOG.md`.
 
 ## Website (`docs/`)

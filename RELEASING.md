@@ -3,7 +3,8 @@
 Plainview ships through two channels from this repo:
 
 - **Mac App Store**: the main channel from 2.0.0 on (paid, $1.99 per the
-  website). Builds are archived and uploaded from Xcode.
+  website). Builds are archived and uploaded with `xcodebuild` and an App
+  Store Connect API key.
 - **GitHub release** on `victor-shammas/plainview`, tagged `vX.Y.Z`, for the
   source and release notes. The 1.x releases were titled "MDView vX.Y.Z";
   1.1.0 and 1.1.1 attached a zipped app, 1.2.0 was source only.
@@ -25,24 +26,37 @@ The website (`docs/`, GitHub Pages) is updated from this repo too.
    next to a document (the folder-access bar); Print and File › Export as PDF
    on a long document (no blank pages, clickable links). Also run
    `swift build`, so the SwiftPM build still compiles.
-4. **Archive and upload.** In Xcode, select the `Plainview` scheme and
-   "Any Mac", Product › Archive (Release). In the Organizer, Distribute App →
-   App Store Connect → Upload. Export compliance is already answered by
+4. **Archive and upload.** Uploading from Xcode's Organizer with the Apple ID
+   fails ("Actor/relationships/providerId"), so upload from the command line
+   with an App Store Connect API key. The key needs the **Admin** role (cloud
+   signing requires it); its `.p8` stays in `~/.appstoreconnect/private_keys/`
+   and never goes in the repo.
+
+       xcodebuild archive -project Plainview.xcodeproj -scheme Plainview -configuration Release \
+         -archivePath build/Plainview.xcarchive -allowProvisioningUpdates
+       # ExportOptions.plist: method app-store-connect, destination upload,
+       # signingStyle automatic, teamID JPP8RN6BJB, uploadSymbols true
+       xcodebuild -exportArchive -archivePath build/Plainview.xcarchive \
+         -exportOptionsPlist ExportOptions.plist -exportPath build/export -allowProvisioningUpdates \
+         -authenticationKeyPath ~/.appstoreconnect/private_keys/AuthKey_<KEY_ID>.p8 \
+         -authenticationKeyID <KEY_ID> -authenticationKeyIssuerID <ISSUER_ID>
+
+   Export compliance is already answered by
    `ITSAppUsesNonExemptEncryption` = false in `Support/Info.plist`.
 5. **App Store Connect.** Create the new macOS version, select the uploaded
    build, fill in "What's New" from the changelog, and submit for review. If
    data handling changed, update the App Privacy answers and
    `Support/PrivacyInfo.xcprivacy` together.
-   - TODO (author): where the listing text (description, keywords,
-     promotional text) and the App Store screenshots are kept; there is no
-     metadata folder in this repo.
-   - TODO (author): manual or automatic release after approval.
+   The listing text (description, keywords, promotional text), the
+   screenshots and their tools are kept in `release/`, which is gitignored;
+   there is no metadata folder in the public repo. Versions release
+   automatically once approved.
 6. **Tag this repo** on the release commit:
 
        git tag vX.Y.Z && git push --tags
 
-   - TODO (author): tag at upload, or only once the App Store version is
-     live.
+   Tag when the GitHub release goes out (step 7); 2.0.0 was tagged before
+   App Store approval.
 7. **GitHub release:**
 
        gh release create vX.Y.Z --title "Plainview X.Y.Z" --notes "…what changed…"
@@ -88,8 +102,8 @@ Once the app is live:
   instructions.
 - In `README.md`, change "Plainview is coming to the Mac App Store" to say
   it is available, with the link.
-- TODO (author): confirm the App Store id `6818242560` and the $1.99 price
-  (both only appear in the HTML comment).
+- The App Store id `6818242560` and the $1.99 price (US base) in that
+  comment are confirmed.
 
 ## If review is rejected
 

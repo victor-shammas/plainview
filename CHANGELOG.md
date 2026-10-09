@@ -8,7 +8,9 @@ released as MDView.
 
 The first release as Plainview and the first for the Mac App Store. Version
 set on 2026-10-01; build 2 was the first upload to App Store Connect, and the
-build number is now 3. Not tagged or released on GitHub yet.
+build 3 was rejected (blank Settings window, no way to reopen a closed
+window), and build 4 fixes both. Tagged `v2.0.0` and released on GitHub with a
+signed, notarized build 3.
 
 - Renamed from MDView to Plainview (a Markdown reader called MDView was
   already on the Mac App Store): app, Xcode project, targets, scheme, Swift
@@ -23,6 +25,11 @@ build number is now 3. Not tagged or released on GitHub yet.
   competing with TextEdit).
 - Plainview's commands now sit in the standard View menu instead of a second
   View menu.
+- Plainview › Settings holds the reading preferences: font, text size, line
+  width, justification and appearance (Match System, Light or Dark).
+- File › New Window (Cmd+N) opens an empty window, so a window can be
+  brought back after the last one is closed.
+- Help › Plainview Help (Cmd+?) opens the support page on the website.
 - Checklist boxes stay on the same line as their text.
 - Website at https://victorshammas.com/plainview/ (home, support, privacy),
   served from `docs/`, with an app bar linking Gaugeline, Quoth and Staple.

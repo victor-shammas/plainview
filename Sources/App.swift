@@ -185,10 +185,16 @@ struct PlainviewApp: App {
 
     var body: some Scene {
         Settings {
-            EmptyView()
+            SettingsView()
+                .environmentObject(appState)
         }
         .commands {
             CommandGroup(replacing: .newItem) {
+                Button("New Window") {
+                    appDelegate.newWindow()
+                }
+                .keyboardShortcut("n")
+
                 Button("Open\u{2026}") {
                     openViaPanel()
                 }
@@ -287,6 +293,15 @@ struct PlainviewApp: App {
                 .keyboardShortcut("d", modifiers: .command)
 
                 Divider()
+            }
+            // The default Help item only says that help isn't available.
+            CommandGroup(replacing: .help) {
+                Button("Plainview Help") {
+                    if let url = URL(string: "https://victorshammas.com/plainview/support.html") {
+                        NSWorkspace.shared.open(url)
+                    }
+                }
+                .keyboardShortcut("?", modifiers: .command)
             }
         }
     }
@@ -452,6 +467,14 @@ class AppState: ObservableObject {
 
     func widenContent() { maxWidth = min(maxWidth + 80, 1400) }
     func narrowContent() { maxWidth = max(maxWidth - 80, 480) }
+
+    func restoreDefaults() {
+        fontSize = 16
+        maxWidth = 800
+        selectedFont = .system
+        appearance = .auto
+        textAlignment = .left
+    }
 }
 
 // MARK: - PDF Print View
@@ -550,6 +573,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             return
         }
         makeWindow(for: document)
+    }
+
+    /// File › New Window: an empty window to drop a file on, so a window can
+    /// always be brought back after the last one is closed.
+    func newWindow() {
+        makeWindow(for: DocumentState())
     }
 
     private func makeWindow(for document: DocumentState) {

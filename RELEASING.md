@@ -47,13 +47,30 @@ The website (`docs/`, GitHub Pages) is updated from this repo too.
 
        gh release create vX.Y.Z --title "Plainview X.Y.Z" --notes "…what changed…"
 
-   Publish a public GitHub release for every version (decided 2026-10-09).
-   - TODO (author): attach a built app or stay source only (as 1.2.0 did)
-     now that the App Store version is paid. If attaching, note that
-     `./install.sh <folder>` produces an ad-hoc-signed, non-notarized app
-     without Quick Look, and that the repo has no script that zips or
-     notarizes it (`release/` is git-ignored, but nothing in the repo writes
-     there). How the 1.1.x zips were made is not recorded.
+   Publish a public GitHub release for every version, with a signed,
+   notarized app attached (decided 2026-10-09; first done for 2.0.0). Build it
+   with full Xcode (on a Mac where `xcode-select` points at the Command Line
+   Tools, prefix the commands with
+   `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer`), signed in to
+   the Apple account for team JPP8RN6BJB in Xcode › Settings › Accounts:
+
+       xcodebuild -project Plainview.xcodeproj -scheme Plainview -configuration Release \
+         -archivePath build/Plainview.xcarchive -allowProvisioningUpdates archive
+       # ExportOptions.plist: method developer-id, destination upload,
+       # signingStyle automatic, teamID JPP8RN6BJB
+       xcodebuild -exportArchive -archivePath build/Plainview.xcarchive \
+         -exportOptionsPlist ExportOptions.plist -exportPath build/export -allowProvisioningUpdates
+       # repeat until Apple has notarized it (usually a minute or two):
+       xcodebuild -exportNotarizedApp -archivePath build/Plainview.xcarchive -exportPath build/notarized
+       spctl -a -vv -t exec build/notarized/Plainview.app   # expect "Notarized Developer ID"
+       ditto -c -k --keepParent build/notarized/Plainview.app Plainview-X.Y.Z.zip
+       gh release upload vX.Y.Z Plainview-X.Y.Z.zip
+
+   Signing uses Apple's cloud-managed Developer ID certificate, so no
+   certificate needs installing, and notarization uses the Xcode account, so
+   no notarytool password is needed. Keep `build/` out of git. (`./install.sh`
+   still builds a local, ad-hoc-signed copy without Quick Look; don't publish
+   that.)
 8. **Website** (`docs/`): update anything that changed (features on
    `index.html`, answers and shortcuts on `support.html`, `privacy.html` and
    its effective date if the policy changed). Keep the README's Features and

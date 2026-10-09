@@ -47,8 +47,9 @@ The website (`docs/`, GitHub Pages) is updated from this repo too.
 
        gh release create vX.Y.Z --title "Plainview X.Y.Z" --notes "…what changed…"
 
-   - TODO (author): attach a build or stay source only (as 1.2.0 did) now
-     that the App Store version is paid. If attaching, note that
+   Publish a public GitHub release for every version (decided 2026-10-09).
+   - TODO (author): attach a built app or stay source only (as 1.2.0 did)
+     now that the App Store version is paid. If attaching, note that
      `./install.sh <folder>` produces an ad-hoc-signed, non-notarized app
      without Quick Look, and that the repo has no script that zips or
      notarizes it (`release/` is git-ignored, but nothing in the repo writes

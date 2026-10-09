@@ -4,7 +4,7 @@ Entries up to and including 2.0.0 were reconstructed on 2026-10-09 from the
 git history, tags and GitHub release notes. Versions before 2.0.0 were
 released as MDView.
 
-## 2.0.0 — 2026-10-09 (GitHub; App Store in review)
+## 2.0.0 — 2026-10-09 (GitHub release; App Store pending)
 
 The first release as Plainview and the first for the Mac App Store. Version
 set on 2026-10-01; build 2 was the first upload to App Store Connect, and the

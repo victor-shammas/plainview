@@ -10,7 +10,7 @@ The first release as Plainview and the first for the Mac App Store. Version
 set on 2026-10-01; build 2 was the first upload to App Store Connect, and the
 build 3 was rejected (blank Settings window, no way to reopen a closed
 window), and build 4 fixes both. Tagged `v2.0.0` and released on GitHub with a
-signed, notarized build 3.
+signed, notarized app: build 3 at first, replaced by build 4 the same day.
 
 - Renamed from MDView to Plainview (a Markdown reader called MDView was
   already on the Mac App Store): app, Xcode project, targets, scheme, Swift

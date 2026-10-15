@@ -4,14 +4,14 @@ Entries up to and including 2.0.0 were reconstructed on 2026-10-09 from the
 git history, tags and GitHub release notes. Versions before 2.0.0 were
 released as MDView.
 
-## 2.0.0 — 2026-10-09 (GitHub release); Mac App Store 2026-10-15
+## 2.0.0 — 2026-10-09 (GitHub release); Mac App Store 2026-10-14
 
 The first release as Plainview and the first for the Mac App Store. Version
 set on 2026-10-01; build 2 was the first upload to App Store Connect, and the
 build 3 was rejected (blank Settings window, no way to reopen a closed
 window), and build 4 fixes both. Tagged `v2.0.0` and released on GitHub with a
 signed, notarized app: build 3 at first, replaced by build 4 the same day.
-Build 4 went live on the Mac App Store on 2026-10-15
+Build 4 went live on the Mac App Store on 2026-10-14
 (https://apps.apple.com/app/plainview-markdown-reader/id6818242560?mt=12).
 
 - Renamed from MDView to Plainview (a Markdown reader called MDView was

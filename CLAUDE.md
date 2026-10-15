@@ -114,8 +114,8 @@ changes.
 - **Mac App Store**: version 2.0.0 is the first App Store release; builds go up
   with `xcodebuild -exportArchive` and an App Store Connect API key (the
   Organizer's Apple ID upload fails). The website's App Store button
-  (commented out in `docs/index.html`) points to app id `6818242560` at
-  $1.99. Listing text and screenshots live in the gitignored `release/`;
+  in `docs/index.html` links to app id `6818242560` at $1.99, without a
+  country code so Apple picks each visitor's storefront. Listing text and screenshots live in the gitignored `release/`;
   there is no App Store metadata folder in this repo.
 - **GitHub releases** on this repo: `v1.1.0` and `v1.1.1` attached a zipped
   `MDView.app`; `v1.2.0` was source only; `v2.0.0` attached a Developer ID

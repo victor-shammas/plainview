@@ -91,20 +91,6 @@ The website (`docs/`, GitHub Pages) is updated from this repo too.
    Keyboard Shortcuts in step. Commit and push to `main`; GitHub Pages
    publishes https://victorshammas.com/plainview/.
 
-## First App Store launch (2.0.0 only)
-
-Once the app is live:
-
-- In `docs/index.html`, replace the "Coming soon to the Mac App Store"
-  `<span>` with the link in the comment above it
-  (`https://apps.apple.com/app/id6818242560`, "Download on the Mac App
-  Store"). The comment says "see README.md", but the README has no further
-  instructions.
-- In `README.md`, change "Plainview is coming to the Mac App Store" to say
-  it is available, with the link.
-- The App Store id `6818242560` and the $1.99 price (US base) in that
-  comment are confirmed.
-
 ## If review is rejected
 
 Fix the issue, increase `CURRENT_PROJECT_VERSION` (keep `MARKETING_VERSION`

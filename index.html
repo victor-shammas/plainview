@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plainview: a Markdown reader for the Mac</title>
+<meta name="description" content="Plainview opens Markdown files in a clean, readable window and does nothing else. Five typefaces, light and dark modes, Quick Look in Finder, live reload and PDF export. No editor, no accounts, no tracking.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Plainview">
+<meta property="og:description" content="A Markdown reader for the Mac. For reading, not editing.">
+<meta property="og:image" content="https://victorshammas.com/plainview/icon.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.png" alt="" width="30" height="30">Plainview</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#features" class="hide-sm">Features</a>
+      <a href="#privacy" class="hide-sm">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <img class="hero-icon" src="icon.png" alt="Plainview app icon" width="96" height="96">
+        <h1>Markdown, ready to read.</h1>
+        <p class="lede">Plainview opens Markdown files in a clean, readable window and does nothing else. No editor, no sidebar, no accounts. Just your document, with proper headings, tables, code blocks, checklists and links.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://apps.apple.com/app/plainview-markdown-reader/id6818242560?mt=12">Download on the Mac App Store <small>$1.99</small></a>
+          <span class="fineprint">macOS 14 or later</span>
+        </div>
+      </div>
+
+      <figure class="mock" aria-label="Illustration of a Markdown document open in Plainview" role="img">
+        <div class="win-bar"><i></i><i></i><i></i>Lisbon.md</div>
+        <div class="page">
+          <p class="t1">Lisbon, four days</p>
+          <p><em>October 17–20 · Two of us, one carry-on each</em></p>
+          <blockquote>Trams are lovely but slow. Walk downhill, take the tram uphill.</blockquote>
+          <p class="t2">Plan</p>
+          <table>
+            <tr><th>Day</th><th>Morning</th><th>Afternoon</th></tr>
+            <tr><td>Thu</td><td>Drop bags in Alfama</td><td>Castelo de São Jorge</td></tr>
+            <tr><td>Fri</td><td>Tram 28 to Estrela</td><td>LX Factory</td></tr>
+            <tr><td>Sat</td><td>Train to Sintra</td><td>Pena Palace</td></tr>
+          </table>
+          <p class="t2">Packing</p>
+          <ul>
+            <li class="done">Passports</li>
+            <li class="done">Comfortable shoes, because the hills are steep</li>
+            <li>Rain jacket</li>
+          </ul>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>Made for reading, not editing.</h2>
+      <p class="section-lede">Most Markdown apps are editors. When you just want to read a README, your notes or a document someone sent you, Plainview shows it the way it was meant to look.</p>
+      <div class="grid">
+        <div class="card"><h3>Read it your way</h3><p>Five typefaces: System Sans, System Serif, Georgia, Palatino and Charter. Zoom, adjust the line width and justify the text. Your choices stick.</p></div>
+        <div class="card"><h3>Light and dark</h3><p>Follows your Mac's appearance, or switch to dark with <kbd>⌘D</kbd> whenever you like.</p></div>
+        <div class="card"><h3>Quick Look</h3><p>Select a Markdown file in Finder and press Space to see it rendered, without opening anything.</p></div>
+        <div class="card"><h3>Live reload</h3><p>The document updates as soon as the file changes on disk, so you can keep Plainview open next to your editor.</p></div>
+        <div class="card"><h3>Print and PDF</h3><p>Print on the paper size you choose, with page breaks that never cut a line in half. Export as PDF with working links to websites, email addresses and headings.</p></div>
+        <div class="card"><h3>And the rest</h3><p>Find in document, links between headings, a window for each file, a Recently Read list, and images stored next to your document.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="section-lede">There's nothing to set up. Open a file and read.</p>
+      <div class="steps">
+        <div class="card"><h3>Open a file</h3><p>Double-click a <code>.md</code> file in Finder, drag it onto Plainview's window or Dock icon, or use File › Open. Plain text files work too.</p></div>
+        <div class="card"><h3>Read</h3><p>Pick a typeface, a size and a line width once. Every document after that opens the same way.</p></div>
+        <div class="card"><h3>Or don't even open it</h3><p>Press Space on a Markdown file in Finder for a rendered Quick Look preview.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap">
+      <h2>Private by design</h2>
+      <p class="section-lede">There is no Plainview account and no Plainview server. The app collects no data. It only uses the network to load images that a document links to on the web.</p>
+      <ul class="checks">
+        <li>No accounts, no sign-in</li>
+        <li>No analytics, tracking or ads</li>
+        <li>Only reads the files you open</li>
+        <li>Never changes your documents</li>
+        <li>Sandboxed, native Swift app</li>
+      </ul>
+      <p style="margin-top:22px"><a href="privacy.html">Read the full privacy policy</a></p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap narrow">
+      <h2>Requirements</h2>
+      <ul>
+        <li>macOS 14 Sonoma or later</li>
+        <li>Opens Markdown (<code>.md</code>, <code>.markdown</code>, <code>.mdown</code>, <code>.mkd</code>) and plain text (<code>.txt</code>) files</li>
+      </ul>
+      <p>Questions? See <a href="support.html">Support &amp; FAQ</a>.</p>
+    </div>
+  </section>
+</main>
+
+<section class="app-bar" aria-label="Apps by Victor Shammas">
+  <div class="wrap">
+    <div class="app-bar-head">
+      <p class="app-bar-title"><a href="https://victorshammas.com/apps/">Small, private apps by Victor Shammas</a></p>
+      <p class="app-bar-coffee">Enjoying one of these apps? <a href="https://buymeacoffee.com/victorshammas">Buy me a coffee</a>.</p>
+    </div>
+    <div class="app-tiles">
+      <a class="app-tile current" aria-current="page" href="https://victorshammas.com/plainview/"><img src="https://victorshammas.com/plainview/icon.png" alt="" width="44" height="44"><span><strong>Plainview</strong><small>A Markdown reader for the Mac</small><em>You’re here</em></span></a>
+      <a class="app-tile" href="https://victorshammas.com/gaugeline/"><img src="https://victorshammas.com/gaugeline/icon.png" alt="" width="44" height="44"><span><strong>Gaugeline</strong><small>AI usage limits in your menu bar</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/quoth/"><img src="https://victorshammas.com/quoth/icon.png" alt="" width="44" height="44"><span><strong>Quoth</strong><small>Local voice transcription</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/staple/"><img src="https://victorshammas.com/staple/icon.png" alt="" width="44" height="44"><span><strong>Staple</strong><small>Substack, stapled together</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/claude-usage-meter/"><img src="https://victorshammas.com/claude-usage-meter/icon.png" alt="" width="44" height="44"><span><strong>Claude Usage Meter</strong><small>Claude limits, free</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/lectern/"><img src="https://victorshammas.com/lectern/icon.png" alt="" width="44" height="44"><span><strong>Lectern</strong><small>A presenter view for HTML slides</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/commonplace/"><img src="https://victorshammas.com/commonplace/icon.png" alt="" width="44" height="44"><span><strong>Commonplace</strong><small>Save links to Apple Notes</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/verbatim/"><img src="https://victorshammas.com/verbatim/icon.png" alt="" width="44" height="44"><span><strong>Verbatim</strong><small>Check quotations against sources</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/plainread/"><img src="https://victorshammas.com/plainread/icon.png" alt="" width="44" height="44"><span><strong>Plainread</strong><small>An EPUB reader for the Mac</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/ibid/"><img src="https://victorshammas.com/ibid/icon.png" alt="" width="44" height="44"><span><strong>Ibid</strong><small>Check citations against the bibliography</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/broadsheet/"><img src="https://victorshammas.com/broadsheet/icon.png" alt="" width="44" height="44"><span><strong>Broadsheet</strong><small>Web links, bound into a book</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/wordrange/"><img src="https://victorshammas.com/wordrange/icon.png" alt="" width="44" height="44"><span><strong>Wordrange</strong><small>Word counts the way journals count</small></span></a>
+      <a class="app-tile" href="https://victorshammas.com/pastedown/"><img src="https://victorshammas.com/pastedown/icon.png" alt="" width="44" height="44"><span><strong>Pastedown</strong><small>Markdown in, rich text out</small></span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="./">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="mailto:contact+plainview@victorshammas.com">Contact</a></nav>
+    <p>Plainview is an independent app. Mac and Mac App Store are trademarks of Apple Inc.</p>
+    <p>© 2026 Victor Shammas</p>
+  </div>
+</footer>
+</body>
+</html>
